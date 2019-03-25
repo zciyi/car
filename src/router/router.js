@@ -1,6 +1,8 @@
 import Home from '@/views/home/Home.vue'
 import contentMain from '@/views/contentMain.vue'
 import forbidden from '@/views/forbidden.vue'
+import homeDemoLoan from '@/views/home/homeDemoLoan.vue'
+
 
 
 
@@ -104,7 +106,7 @@ const staticRouter = [{
             meta: {
                 title: '资讯/案例详情'
             },
-            component: Home
+            component: homeDemoLoan
         }]
     },
     {
