@@ -5,17 +5,17 @@
 npm install
 ```
 
-###打包开发
+### 打包开发
 ```
 npm run builddev
 ```
 
-###项目分析
+### 项目分析
 ```
 npm run analyz
 ```
 
-###本地开发
+### 本地开发
 ```
 npm run dev
 ```
