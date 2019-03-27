@@ -4,10 +4,12 @@
 ```
 npm install
 ```
+
 ###打包开发
 ```
 npm run builddev
 ```
+
 ###项目分析
 ```
 npm run analyz
