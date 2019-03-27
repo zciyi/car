@@ -1,3 +1,5 @@
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
     // baseUrl  type:{string} default:'/' 
     // 将部署应用程序的基本URL
@@ -62,6 +64,15 @@ module.exports = {
         overlay: {
             warnings: false,
             errors: false
+        }
+    },
+    chainWebpack: config => {
+        // 打包分析
+        if (process.env.IS_ANALYZ) {
+            config.plugin('webpack-report')
+                .use(BundleAnalyzerPlugin, [{
+                    analyzerMode: 'static',
+                }]);
         }
     }
 }

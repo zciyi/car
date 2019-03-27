@@ -3,11 +3,10 @@ import App from './App.vue'
 import router from '@/router'
 import store from '@/store/store'
 import depot from '@/modules/http'
-import iView from 'iview'
-import 'iview/dist/styles/iview.css' // 使用 CSS
+import './plugins/iview.js'
 
 Vue.config.productionTip = false
-Vue.use(iView) // 必不可少的
+
 depot()
 
 

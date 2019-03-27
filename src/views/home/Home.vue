@@ -14,9 +14,16 @@ export default {
     // HelloWorld
   },
   created(){
-    depot.get({
+    depot.post({
       url: '/a',
-      data: {},
+      config: {
+        params:{
+          id:"22"
+        },
+        data:{
+          aa:3999
+        }
+      },
       cb: (res)=> {
         console.log(res)
       }

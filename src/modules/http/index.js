@@ -3,8 +3,19 @@ import apis from './apis'
 
 var depot = {}
 
+var replaceUrlParams = function(url, config) {
+    if (!url) return
+    var params = config.params || {}
+
+    Object.keys(params).forEach(function(key) {
+        var reg = new RegExp('{' + key + '}', 'g')
+        url = url.replace(reg, params[key])
+    })
+    return url
+}
+
 depot.get = function({ url, config = {}, cb }) {
-    let urlTpm = apis[url] || url;
+    let urlTpm = replaceUrlParams(apis[url] || url, config);
     axios.get(urlTpm, config).then((res) => {
         if (res.status === 200) {
             let result = res.data;
@@ -16,7 +27,7 @@ depot.get = function({ url, config = {}, cb }) {
 };
 
 depot.post = function({ url, data, config, cb }) {
-    let urlTpm = apis[url] || url;
+    let urlTpm = replaceUrlParams(apis[url] || url, config);
     axios.post(urlTpm, data, config).then(
         (res) => {
             if (res.status === 200) {
@@ -30,7 +41,7 @@ depot.post = function({ url, data, config, cb }) {
     });
 };
 depot.put = function({ url, data, config, cb }) {
-    let urlTpm = apis[url] || url;
+    let urlTpm = replaceUrlParams(apis[url] || url, config);
     axios.put(urlTpm, data, config).then(
         (res) => {
             if (res.status === 200) {
@@ -44,7 +55,7 @@ depot.put = function({ url, data, config, cb }) {
     });
 };
 depot.delete = function({ url, config = {}, cb }) {
-    let urlTpm = apis[url] || url;
+    let urlTpm = replaceUrlParams(apis[url] || url, config);
     axios.delete(urlTpm, config).then((res) => {
         if (res.status === 200) {
             let result = res.data;

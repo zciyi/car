@@ -1,3 +1,3 @@
 export default {
-    "/a": "/ppp"
+    "/a": "/ppp/{id}"
 }
