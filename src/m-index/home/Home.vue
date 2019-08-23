@@ -1,5 +1,5 @@
 <template>
-  <div class="home" >
+  <div class="home" @click="tosubpage">
     sdfsdfsfsfsdddddddddddddddddddddddddddddd
   </div>
 </template>
@@ -28,6 +28,11 @@ export default {
         console.log(res)
       }
     })
+  },
+  methods:{
+    tosubpage(){
+      window.location.href="/subpage"
+    }
   }
 }
 </script>
