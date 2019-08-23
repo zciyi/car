@@ -21,21 +21,22 @@ module.exports = {
       的字符串，
       注意：请保证pages里配置的路径和文件名 在你的文档目录都存在 否则启动服务会报错的
     */
-    // pages: {
-    // index: {
-    // entry for the page
-    // entry: 'src/index/main.js',
-    // the source template
-    // template: 'public/index.html',
-    // output as dist/index.html
-    // filename: 'index.html'
-    // },
-    // when using the entry-only string format,
-    // template is inferred to be `public/subpage.html`
-    // and falls back to `public/index.html` if not found.
-    // Output filename is inferred to be `subpage.html`.
-    // subpage: 'src/subpage/main.js'
-    // },
+    pages: {
+        index: {
+            // entry for the page
+            entry: 'src/main.js',
+            // the source template
+            template: 'public/index.html',
+            // output as dist/index.html
+            filename: 'index.html',
+            chunks: ['index']
+        },
+        // when using the entry-only string format,
+        // template is inferred to be `public/subpage.html`
+        // and falls back to `public/index.html` if not found.
+        // Output filename is inferred to be `subpage.html`.
+        subpage: 'src/m-subpage/main.js'
+    },
 
     //   lintOnSave：{ type:Boolean default:true } 问你是否使用eslint
     lintOnSave: false,

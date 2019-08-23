@@ -1,7 +1,7 @@
-import Home from '@/views/home/Home.vue'
-import contentMain from '@/views/contentMain.vue'
-import forbidden from '@/views/forbidden.vue'
-import homeDemoLoan from '@/views/home/homeDemoLoan.vue'
+import Home from '@/m-index/home/Home.vue'
+import contentMain from '@/m-index/contentMain.vue'
+import forbidden from '@/forbidden.vue'
+import homeDemoLoan from '@/m-index/home/homeDemoLoan.vue'
 
 
 
